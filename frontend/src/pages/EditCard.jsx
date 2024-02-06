@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import BackButton from '../components/Back';
 import Spinner from '../components/Spinner';
 import Select from 'react-select'
+import { useSnackbar } from 'notistack';
 
 const options = [
     {
@@ -303,6 +304,7 @@ const EditCard = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const {id} = useParams();
+    const { enqueueSnackbar } = useSnackbar();
 
     let handleChangeSet = (e) => {
         setSet(e.value)
@@ -342,11 +344,12 @@ const EditCard = () => {
         axios.put(`http://localhost:8888/cards/${id}`, data)
         .then(() => {
             setLoading(false);
+            enqueueSnackbar('Card Changed', { variant: 'success' });
             navigate('/');
         })
         .catch((error) => {
             setLoading(false);
-            alert('An error occured');
+            enqueueSnackbar('Card Change Error', { variant: 'error' });
             console.log(error);
         });
     }

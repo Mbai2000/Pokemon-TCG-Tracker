@@ -54,10 +54,6 @@ const ShowCard = () => {
                         <span className='text-xl mr-4 text-gray-500'>Edition</span>
                         <span>{card.edition}</span>
                     </div>
-                    <div className='my-4'>
-                        <span className='text-xl mr-4 text-gray-500'>Added</span>
-                        <span>{new Date(card.createdAt).toString()}</span>
-                    </div>
                 </div>
             )}
         </div>

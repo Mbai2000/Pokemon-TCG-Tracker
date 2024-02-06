@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import BackButton from '../components/Back';
 import Spinner from '../components/Spinner';
 import Select from 'react-select'
+import { useSnackbar } from 'notistack';
 
 const options = [
     {
@@ -303,6 +304,8 @@ const AddCard = () => {
     const [edition, setEdition] = useState('');
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const { enqueueSnackbar } = useSnackbar();
+
     const handleSaveCard = () => {
         const data = {
             name,
@@ -315,11 +318,12 @@ const AddCard = () => {
         axios.post('http://localhost:8888/cards', data)
         .then(() => {
             setLoading(false);
+            enqueueSnackbar('Card Added', { variant: 'success' });
             navigate('/');
         })
         .catch((error) => {
             setLoading(false);
-            alert('An error occured');
+            enqueueSnackbar('Error Adding Card', { variant: 'error' });
             console.log(error);
         });
     };
