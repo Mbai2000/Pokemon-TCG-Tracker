@@ -6,6 +6,7 @@ import DeleteCard from './pages/DeleteCard';
 import EditCard from './pages/EditCard';
 import ShowCard from './pages/ShowCard';
 import SearchCard from './pages/SearchCard';
+import Settings from './pages/Settings';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Route path='/cards/delete/:id' element ={<DeleteCard />} />
       <Route path='/cards/details/:id' element ={<ShowCard />} />
       <Route path='/cards/search' element={<SearchCard/>} />
+      <Route path='/settings' element={<Settings/>} />
     </Routes>
   )
 }
