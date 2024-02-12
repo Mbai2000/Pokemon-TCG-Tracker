@@ -6,19 +6,22 @@ import DeleteCard from './pages/DeleteCard';
 import EditCard from './pages/EditCard';
 import ShowCard from './pages/ShowCard';
 import SearchCard from './pages/SearchCard';
-import Settings from './pages/Settings';
+import SidebarNav from './components/SidebarNav';
 
 const App = () => {
   return (
-    <Routes>
+    <div className='flex dark dark: bg-neutral-900'>
+      <SidebarNav/>
+      <Routes>
       <Route path='/' element ={<Home/>} />
       <Route path='/cards/add' element ={<AddCard />} />
       <Route path='/cards/edit/:id' element ={<EditCard />} />
       <Route path='/cards/delete/:id' element ={<DeleteCard />} />
       <Route path='/cards/details/:id' element ={<ShowCard />} />
       <Route path='/cards/search' element={<SearchCard/>} />
-      <Route path='/settings' element={<Settings/>} />
     </Routes>
+    </div>
+    
   )
 }
 

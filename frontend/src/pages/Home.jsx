@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "../components/Spinner";
 import CardView from "../components/Home/CardView";
-import SidebarNav from "../components/SidebarNav";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -23,8 +22,7 @@ const Home = () => {
   }, []);
   return (
     <div className="overflow-hidden flex max-h-screen">
-      <SidebarNav />
-      <h1 className="text-3xl my-8 p-7 flex-1 h-screen font-semibold">
+      <h1 className="text-3xl my-8 p-7 flex-1 h-screen font-semibold dark: text-white">
         Collection
       </h1>
       {loading ? <Spinner /> : <CardView cards={cards} />}

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import Select from "react-select";
 import { useSnackbar } from "notistack";
-import SidebarNav from "../components/SidebarNav";
 
 const options = [
   {
@@ -407,13 +406,12 @@ const AddCard = () => {
   };
   return (
     <div className="flex">
-        <SidebarNav/>
       <div className="p-4 justify-center items-center mx-auto">
-        <h1 className="text-3xl my-4">Add Card</h1>
+        <h1 className="text-3xl my-4 dark: text-white">Add Card</h1>
         {loading ? <Spinner /> : ""}
         <div className="flex flex-col border-2 border-sky-400 rounded-x1 w-[600px] p-4 mx-auto">
           <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Name</label>
+            <label className="text-xl mr-4 text-gray-500 dark: text-white">Name</label>
             <input
               type="text"
               value={name}
