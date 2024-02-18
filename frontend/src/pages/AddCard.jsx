@@ -405,53 +405,53 @@ const AddCard = () => {
     setVersion(e.value);
   };
   return (
-    <div className="flex">
-      <div className="p-4 justify-center items-center mx-auto">
-        <h1 className="text-3xl my-4 dark: text-white">Add Card</h1>
+    <div className="flex mx-auto">
+      <div className="p-4 justify-center items-center">
+        <h1 className="text-3xl my-4 text-black dark:text-white">Add Card</h1>
         {loading ? <Spinner /> : ""}
         <div className="flex flex-col border-2 border-sky-400 rounded-x1 w-[600px] p-4 mx-auto">
           <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500 dark: text-white">Name</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Name</label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
+              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
             />
           </div>
           <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Number</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Number</label>
             <input
               type="text"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
+              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
             />
           </div>
           <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Version</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Version</label>
             <Select
               options={versionOptions}
               onChange={handleChangeVersion}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
+              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
               isSearchable={true}
             ></Select>
           </div>
           <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Set</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Set</label>
             <Select
               options={options}
               onChange={handleChangeSet}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
+              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
               isSearchable={true}
             ></Select>
           </div>
           <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Edition</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Edition</label>
             <Select
               options={editionOptions}
               onChange={handleChangeEdition}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
+              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
               isSearchable={true}
             ></Select>
           </div>

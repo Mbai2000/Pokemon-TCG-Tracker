@@ -21,8 +21,8 @@ const Home = () => {
       });
   }, []);
   return (
-    <div className="overflow-hidden flex max-h-screen">
-      <h1 className="text-3xl my-8 p-7 flex-1 h-screen font-semibold dark: text-white">
+    <div className='overflow-hidden flex max-h-screen'>
+      <h1 className="text-3xl my-8 p-7 flex-1 h-screen font-semibold text-black dark:text-white">
         Collection
       </h1>
       {loading ? <Spinner /> : <CardView cards={cards} />}

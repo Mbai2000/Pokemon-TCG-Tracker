@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const SidebarNav = () => {
   const Menus = [
     { name: "Search", src: "Search", link: "/cards/search" },
     { name: "Manual Add", src: "Add", gap: true, link: "/cards/add" },
-    { name: "Settings", src: "Settings", gap: true, link: "/settings" },
   ];
   return (
     <div className="flex">
