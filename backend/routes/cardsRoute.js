@@ -29,7 +29,7 @@ router.get('/:id', async (request,response) => {
 // Create
 router.post('/', async (request,response) => {
     try {
-        if (!request.body.name || !request.body.number || !request.body.version || !request.body.set || !request.body.edition) {
+        if (!request.body.name || !request.body.number || !request.body.version || !request.body.set || !request.body.edition || !request.body.image || !request.body.market) {
             return response.status(400).send({message: 'Please include all the required fields of name, number, version, set, and edition'})
         }
         const card = {
@@ -38,6 +38,8 @@ router.post('/', async (request,response) => {
             version: request.body.version,
             set: request.body.set,
             edition: request.body.edition,
+            image: request.body.image,
+            market: request.body.market,
         }
 
         const newCard = await Card.create(card);
@@ -48,7 +50,7 @@ router.post('/', async (request,response) => {
 // Update
 router.put('/:id', async (request, response) => {
     try {
-        if (!request.body.name || !request.body.number || !request.body.version || !request.body.set || !request.body.edition) {
+        if (!request.body.name || !request.body.number || !request.body.version || !request.body.set || !request.body.edition || !request.body.image || !request.body.market) {
             return response.status(400).send({message: 'Please include all the required fields of name, number, version, and set'})
         }
         const { id } = request.params;

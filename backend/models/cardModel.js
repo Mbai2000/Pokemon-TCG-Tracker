@@ -22,74 +22,14 @@ const cardSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        /*supertype: {
+        image: {
             type: String,
             required: true
         },
-        subtypes: {
-            type: [String],
-            required: true
-        },
-        level: {
+        market: {
             type: String,
             required: true
-        },
-        hp: {
-            type: String,
-            required: true
-        },
-        types: {
-            type: [String],
-            required: true
-        },
-        evolvesFrom: {
-            type: String,
-            required: true
-        },
-        evolvesTo: {
-            type: String,
-            required: true
-        },
-        rules: {
-            type: String,
-            required: true
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },*/
+        }
     }
 );
 

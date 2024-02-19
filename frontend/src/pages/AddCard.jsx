@@ -369,6 +369,8 @@ const AddCard = () => {
   const [version, setVersion] = useState("");
   const [set, setSet] = useState("");
   const [edition, setEdition] = useState("");
+  const [image, setImage] = useState("");
+  const [market, setMarket] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -404,6 +406,7 @@ const AddCard = () => {
   let handleChangeVersion = (e) => {
     setVersion(e.value);
   };
+
   return (
     <div className="flex mx-auto">
       <div className="p-4 justify-center items-center">
@@ -454,6 +457,24 @@ const AddCard = () => {
               className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
               isSearchable={true}
             ></Select>
+          </div>
+          <div className="my-4">
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Image</label>
+            <input
+              type="text"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
+            />
+          </div>
+          <div className="my-4">
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Market Price</label>
+            <input
+              type="text"
+              value={market}
+              onChange={(e) => setMarket(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
+            />
           </div>
           <button className="p-2 bg-sky-300 m-8" onClick={handleSaveCard}>
             Add
