@@ -6,6 +6,10 @@ pokemon.configure({apiKey: `${process.env.TCG_API_KEY}`});
 
 const router = express.Router();
 
+function searchPokemonCards(search) {
+    
+}
+
 
 // Read
 router.get('/:id', async (request,response) => {

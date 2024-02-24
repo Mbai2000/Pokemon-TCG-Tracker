@@ -382,6 +382,8 @@ const AddCard = () => {
       version,
       set,
       edition,
+      image,
+      market
     };
     setLoading(true);
     axios
@@ -389,7 +391,7 @@ const AddCard = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Card Added", { variant: "success" });
-        navigate("/");
+        navigate('/');
       })
       .catch((error) => {
         setLoading(false);
@@ -408,18 +410,20 @@ const AddCard = () => {
   };
 
   return (
-    <div className="flex mx-auto">
-      <div className="p-4 justify-center items-center">
-        <h1 className="text-3xl my-4 text-black dark:text-white">Add Card</h1>
+    <div className="flex p-4 mx-auto">
+      <div className="justify-center items-center">
+        <h1 className="text-3xl my-4 text-black dark:text-white">
+          Add Card
+          </h1>
         {loading ? <Spinner /> : ""}
         <div className="flex flex-col border-2 border-sky-400 rounded-x1 w-[600px] p-4 mx-auto">
-          <div className="my-4">
+          <div className="my-1">
             <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Name</label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
             />
           </div>
           <div className="my-4">
@@ -428,7 +432,7 @@ const AddCard = () => {
               type="text"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
             />
           </div>
           <div className="my-4">
@@ -436,7 +440,7 @@ const AddCard = () => {
             <Select
               options={versionOptions}
               onChange={handleChangeVersion}
-              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800"
               isSearchable={true}
             ></Select>
           </div>
@@ -445,7 +449,7 @@ const AddCard = () => {
             <Select
               options={options}
               onChange={handleChangeSet}
-              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800"
               isSearchable={true}
             ></Select>
           </div>
@@ -454,17 +458,17 @@ const AddCard = () => {
             <Select
               options={editionOptions}
               onChange={handleChangeEdition}
-              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800"
               isSearchable={true}
             ></Select>
           </div>
           <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Image</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Image (URL)</label>
             <input
               type="text"
               value={image}
               onChange={(e) => setImage(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
             />
           </div>
           <div className="my-4">
@@ -473,10 +477,10 @@ const AddCard = () => {
               type="text"
               value={market}
               onChange={(e) => setMarket(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full dark:bg-slate-800"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
             />
           </div>
-          <button className="p-2 bg-sky-300 m-8" onClick={handleSaveCard}>
+          <button className="p-2 bg-sky-300 m-3" onClick={handleSaveCard}>
             Add
           </button>
         </div>

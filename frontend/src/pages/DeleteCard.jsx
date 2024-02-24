@@ -27,12 +27,12 @@ const DeleteCard = () => {
       });
   };
   return (
-    <div className="p-4">
+    <div className="p-4 mx-auto">
       <BackButton />
-      <h1 className="text-3xl my-4">Delete Card</h1>
+      <h1 className="text-3xl my-4 dark:text-white">Delete Card</h1>
       {loading ? <Spinner /> : ""}
       <div className="flex flex-col items-center border-2 border-sky-400 rounded-xl w-[600px] p-8 mx-auto">
-        <h3 className="text-2xl">
+        <h3 className="text-2xl dark:text-white">
           Are You Sure You Would Like to Delete this Card?
         </h3>
         <button

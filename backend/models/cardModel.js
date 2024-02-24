@@ -29,7 +29,7 @@ const cardSchema = mongoose.Schema(
         market: {
             type: String,
             required: true
-        }
+        },
     }
 );
 
