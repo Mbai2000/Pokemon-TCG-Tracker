@@ -1,4 +1,4 @@
-export const pokemon = [
+export const pokemonNames = [
 { name: "Bulbasaur", },
 { name: "Ivysaur", },
 { name: "Venusaur", },

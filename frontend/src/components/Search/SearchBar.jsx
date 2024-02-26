@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { pokemon } from "./Data/data.js";
+import { pokemonNames } from "./Data/data.js";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
+
+  const addr = "https://api.pokemontcg.io/v2/cards/?q=";
+
+  const handleSearch = () => {
+    let searchName = addr +"name:" + query;
+    fetch(searchName)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+  }
+
 
   return (
     <div className="p-4">
@@ -17,11 +28,15 @@ const SearchBar = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
-            <button className="absolute text-neutral-100 right-1 top-1/2 -translate-y-1/2 p-4 bg-slate-900 rounded-full">
+            <button
+              className="absolute text-neutral-100 right-1 top-1/2 -translate-y-1/2 p-4 bg-slate-900 rounded-full"
+              onClick={handleSearch}
+              type="button"
+            >
               <AiOutlineSearch />
             </button>
             <div className="absolute top-16 p-4 bg-slate-800 text-white w-[500px] rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2 mx-auto">
-              {pokemon
+              {pokemonNames
                 .filter((item) => {
                   const searchTerm = query.toLowerCase();
                   const pokemonName = item.name.toLowerCase();
@@ -45,24 +60,24 @@ const SearchBar = () => {
           </div>
         </form>
       </div>
-      <div className='grid mt-12 ml-24 gap-y-4 gap-x-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mr-40 h-[48rem] w-[80rem] overflow-auto'>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
-        </div>
+      <div className="grid mt-12 ml-24 gap-y-4 gap-x-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mr-40 h-[48rem] w-[80rem] overflow-auto">
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+        <img src="https://images.pokemontcg.io/xy1/1.png" />
+      </div>
     </div>
   );
 };
