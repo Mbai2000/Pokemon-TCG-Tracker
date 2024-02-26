@@ -29,8 +29,8 @@ router.get('/:id', async (request,response) => {
 // Create
 router.post('/', async (request,response) => {
     try {
-        if (!request.body.name || !request.body.number || !request.body.version || !request.body.set || !request.body.edition || !request.body.image || !request.body.market) {
-            return response.status(400).send({message: 'Please include all the required fields of name, number, version, set, image, and market value'})
+        if (!request.body.name || !request.body.number || !request.body.set || !request.body.image || !request.body.market) {
+            return response.status(400).send({message: 'Please include all the required fields of name, number, set, image, and market value'})
         }
         const card = {
             name: request.body.name,
@@ -50,8 +50,8 @@ router.post('/', async (request,response) => {
 // Update
 router.put('/:id', async (request, response) => {
     try {
-        if (!request.body.name || !request.body.number || !request.body.version || !request.body.set || !request.body.edition || !request.body.image || !request.body.market) {
-            return response.status(400).send({message: 'Please include all the required fields of name, number, version, set, image, and market value'})
+        if (!request.body.name || !request.body.number || !request.body.set || !request.body.image || !request.body.market) {
+            return response.status(400).send({message: 'Please include all the required fields of name, number, set, image, and market value'})
         }
         const { id } = request.params;
         const update = await Card.findByIdAndUpdate(id, request.body);

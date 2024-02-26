@@ -10,15 +10,7 @@ const cardSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        version: {
-            type: String,
-            required: true
-        },
         set: {
-            type: String,
-            required: true
-        },
-        edition: {
             type: String,
             required: true
         },

@@ -19,7 +19,7 @@ const CardModal = ({ card, onClose }) => {
           className="absolute right-6 top-6 text-3xl text-red-600 cursor-pointer"
           onClick={onClose}
         />
-        <img className = "object-contain" src = {card.image}></img>
+        <img className = "object-contain h-[340px]" src = {card.image}></img>
         <h2 className="w-fit px-4 py-1 bg-red-300 rounded-lg">
           {card.number}
         </h2>
@@ -27,14 +27,6 @@ const CardModal = ({ card, onClose }) => {
         <div className="flex justify-start items-center gap-x-2">
           <AiOutlineCaretRight className="text-red-300 text-2xl" />
           <h2 className="my-1 dark:text-white">{card.name}</h2>
-        </div>
-        <div className="flex justify-start items-center gap-x-2">
-          <AiOutlineCaretRight className="text-red-300 text-2xl" />
-          <h2 className="my-1 dark:text-white">{card.version}</h2>
-        </div>
-        <div className="flex justify-start items-center gap-x-2">
-          <AiOutlineCaretRight className="text-red-300 text-2xl" />
-          <h2 className="my-1 dark:text-white">{card.edition}</h2>
         </div>
         <div className="flex justify-start items-center gap-x-2">
           <AiOutlineCaretRight className="text-red-300 text-2xl" />

@@ -348,27 +348,11 @@ const options = [
   },
 ];
 
-const editionOptions = [
-  { value: "1st Edition", label: "1st Edition" },
-  { value: "Unlimited", label: "Unlimited" },
-  { value: "Shadowless", label: "Shadowless" },
-  { value: "N/A", label: "N/A" },
-];
-
-const versionOptions = [
-  { value: "Non-Holo", label: "Non-Holo" },
-  { value: "Holo", label: "Holo" },
-  { value: "Reverse-Holo", label: "Reverse-Holo" },
-  { value: "Full Art", label: "Full Art" },
-  { value: "Alt Art", label: "Alt Art" },
-];
 
 const AddCard = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
-  const [version, setVersion] = useState("");
   const [set, setSet] = useState("");
-  const [edition, setEdition] = useState("");
   const [image, setImage] = useState("");
   const [market, setMarket] = useState("");
   const [loading, setLoading] = useState(false);
@@ -379,9 +363,7 @@ const AddCard = () => {
     const data = {
       name,
       number,
-      version,
       set,
-      edition,
       image,
       market
     };
@@ -401,12 +383,6 @@ const AddCard = () => {
   };
   let handleChangeSet = (e) => {
     setSet(e.value);
-  };
-  let handleChangeEdition = (e) => {
-    setEdition(e.value);
-  };
-  let handleChangeVersion = (e) => {
-    setVersion(e.value);
   };
 
   return (
@@ -436,28 +412,10 @@ const AddCard = () => {
             />
           </div>
           <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Version</label>
-            <Select
-              options={versionOptions}
-              onChange={handleChangeVersion}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800"
-              isSearchable={true}
-            ></Select>
-          </div>
-          <div className="my-4">
             <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Set</label>
             <Select
               options={options}
               onChange={handleChangeSet}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800"
-              isSearchable={true}
-            ></Select>
-          </div>
-          <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Edition</label>
-            <Select
-              options={editionOptions}
-              onChange={handleChangeEdition}
               className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800"
               isSearchable={true}
             ></Select>
