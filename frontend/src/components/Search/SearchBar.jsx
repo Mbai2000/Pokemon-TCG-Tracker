@@ -25,7 +25,11 @@ const SearchBar = () => {
                 .filter((item) => {
                   const searchTerm = query.toLowerCase();
                   const pokemonName = item.name.toLowerCase();
-                  return searchTerm && pokemonName.startsWith(searchTerm) && pokemonName !== searchTerm;
+                  return (
+                    searchTerm &&
+                    pokemonName.startsWith(searchTerm) &&
+                    pokemonName !== searchTerm
+                  );
                 })
                 .slice(0, 10)
                 .map((item) => (
@@ -41,6 +45,24 @@ const SearchBar = () => {
           </div>
         </form>
       </div>
+      <div className='grid mt-12 ml-24 gap-y-4 gap-x-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mr-40 h-[48rem] w-[80rem] overflow-auto'>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+          <img src = "https://images.pokemontcg.io/xy1/1.png"/>
+        </div>
     </div>
   );
 };
