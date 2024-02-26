@@ -20,12 +20,12 @@ const SearchBar = () => {
             <button className="absolute text-neutral-100 right-1 top-1/2 -translate-y-1/2 p-4 bg-slate-900 rounded-full">
               <AiOutlineSearch />
             </button>
-            <div className="absolute top-20 p-4 bg-slate-800 text-white w-[500px] rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2 mx-auto">
+            <div className="absolute top-16 p-4 bg-slate-800 text-white w-[500px] rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2 mx-auto">
               {pokemon
                 .filter((item) => {
                   const searchTerm = query.toLowerCase();
                   const pokemonName = item.name.toLowerCase();
-                  return searchTerm && pokemonName.startsWith(searchTerm);
+                  return searchTerm && pokemonName.startsWith(searchTerm) && pokemonName !== searchTerm;
                 })
                 .slice(0, 10)
                 .map((item) => (
