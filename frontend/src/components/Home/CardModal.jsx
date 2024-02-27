@@ -34,7 +34,19 @@ const CardModal = ({ card, onClose }) => {
         </div>
         <div className="flex justify-start items-center gap-x-2">
           <CiDollar className="text-green-500 text-2xl" />
-          <h2 className="my-1 dark:text-white">{card.market}</h2>
+          <h2 className="my-1 dark:text-white">Price data from: {card.date}</h2>
+        </div>
+        <div className="flex justify-start items-center gap-x-2">
+          <CiDollar className="text-green-500 text-2xl" />
+          <h2 className="my-1 dark:text-white">{card.normal}</h2>
+        </div>
+        <div className="flex justify-start items-center gap-x-2">
+          <CiDollar className="text-green-500 text-2xl" />
+          <h2 className="my-1 dark:text-white">{card.holo}</h2>
+        </div>
+        <div className="flex justify-start items-center gap-x-2">
+          <CiDollar className="text-green-500 text-2xl" />
+          <h2 className="my-1 dark:text-white">{card.reverse}</h2>
         </div>
         <div className="flex justify-between items-center gap-x-2 mt-4 p-4">
           <Link to={`/cards/edit/${card._id}`}>

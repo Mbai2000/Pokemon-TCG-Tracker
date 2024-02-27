@@ -29,20 +29,22 @@ router.get('/:id', async (request,response) => {
 // Create
 router.post('/', async (request,response) => {
     try {
-        if (!request.body.name || !request.body.number || !request.body.set || !request.body.image || !request.body.market) {
-            return response.status(400).send({message: 'Please include all the required fields of name, number, set, image, and market value'})
+        if (!request.body.name || !request.body.number || !request.body.set || !request.body.image || !request.body.date || !request.body.normal || !request.body.holo || !request.body.reverse) {
+            return response.status(400).send({message: 'Please include all the required fields of name, number, set, image, and market values with the corresponding date'})
         }
         const card = {
             name: request.body.name,
             number: request.body.number,
-            version: request.body.version,
             set: request.body.set,
-            edition: request.body.edition,
             image: request.body.image,
-            market: request.body.market,
+            date: request.body.date,
+            normal: request.body.normal,
+            holo: request.body.holo,
+            reverse: request.body.reverse,
         }
 
         const newCard = await Card.create(card);
+        return response.status(201).send({message: 'Card Added'});
     } catch (error) {
         response.status(500).send({message: error.message});
     }
@@ -50,8 +52,8 @@ router.post('/', async (request,response) => {
 // Update
 router.put('/:id', async (request, response) => {
     try {
-        if (!request.body.name || !request.body.number || !request.body.set || !request.body.image || !request.body.market) {
-            return response.status(400).send({message: 'Please include all the required fields of name, number, set, image, and market value'})
+        if (!request.body.name || !request.body.number || !request.body.set || !request.body.image || !request.body.date || !request.body.normal || !request.body.holo || !request.body.reverse) {
+            return response.status(400).send({message: 'Please include all the required fields of name, number, set, image, and market values with the corresponding date'})
         }
         const { id } = request.params;
         const update = await Card.findByIdAndUpdate(id, request.body);

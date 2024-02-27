@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import Spinner from '../components/Spinner';
 import Select from 'react-select'
 import { useSnackbar } from 'notistack';
 
@@ -284,8 +283,10 @@ const EditCard = () => {
     const [number, setNumber] = useState('');
     const [set, setSet] = useState('');
     const [image, setImage] = useState('');
-    const [market, setMarket] = useState('');
-    const [loading, setLoading] = useState(false);
+    const [date, setDate] = useState('');
+    const [normal, setNormal] = useState('');
+    const [holo, setHolo] = useState('');
+    const [reverse, setReverse] = useState('');
     const navigate = useNavigate();
     const {id} = useParams();
     const { enqueueSnackbar } = useSnackbar();
@@ -295,17 +296,17 @@ const EditCard = () => {
     }
 
     useEffect(() => {
-        setLoading(true);
         axios.get(`http://localhost:8888/cards/${id}`)
         .then((response) => {
             setName(response.data.name);
             setNumber(response.data.number);
             setSet(response.data.set);
             setImage(response.data.image);
-            setMarket(response.data.market);
-            setLoading(false);
+            setDate(response.data.date);
+            setNormal(response.data.normal);
+            setHolo(response.data.holo);
+            setReverse(response.data.reverse);
         }).catch((error) => {
-            setLoading(false);
             alert('An error has occured');
             console.log(error);
         });
@@ -316,17 +317,17 @@ const EditCard = () => {
             number,
             set,
             image,
-            market,
+            date,
+            normal,
+            holo,
+            reverse,
         };
-        setLoading(true);
         axios.put(`http://localhost:8888/cards/${id}`, data)
         .then(() => {
-            setLoading(false);
             enqueueSnackbar('Card Changed', { variant: 'success' });
             navigate('/');
         })
         .catch((error) => {
-            setLoading(false);
             enqueueSnackbar('Card Change Error', { variant: 'error' });
             console.log(error);
         });
@@ -335,7 +336,6 @@ const EditCard = () => {
     return (
         <div className = 'p-4 mx-auto'>
             <h1 className = 'text-3xl my-4 dark:text-white'>Edit Card</h1>
-            {loading ? <Spinner /> : ''}
             <div className='flex flex-col border-2 border-sky-400 rounded-x1 w-[600px] p-4 mx-auto'>
                 <div className='my-1'>
                     <label className='text-xl mr-4 text-gray-500 dark:text-white'>Name</label>
@@ -346,7 +346,7 @@ const EditCard = () => {
                     className='border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white'
                     />
                 </div>
-                <div className='my-4'>
+                <div className='my-3'>
                     <label className='text-xl mr-4 text-gray-500 dark:text-white'>Number</label>
                     <input
                     type='text'
@@ -355,7 +355,7 @@ const EditCard = () => {
                     className='border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white'
                     />
                 </div>
-                <div className='my-4'>
+                <div className='my-3'>
                     <label className='text-xl mr-4 text-gray-500 dark:text-white'>Set</label>
                     <Select
                     options={options}
@@ -364,7 +364,7 @@ const EditCard = () => {
                     isSearchable={true}>
                     </Select>
                 </div>
-                <div className='my-4'>
+                <div className='my-3'>
                     <label className='text-xl mr-4 text-gray-500 dark:text-white'>Image</label>
                     <input
                     type='text'
@@ -373,12 +373,39 @@ const EditCard = () => {
                     className='border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white'
                     />
                 </div>
-                <div className='my-4'>
-                    <label className='text-xl mr-4 text-gray-500 dark:text-white'>Market Price</label>
+                <div className='my-3'>
+                    <label className='text-xl mr-4 text-gray-500 dark:text-white'>Price Date</label>
                     <input
                     type='text'
-                    value={market}
-                    onChange={(e) => setMarket(e.target.value)}
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    className='border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white'
+                    />
+                </div>
+                <div className='my-3'>
+                    <label className='text-xl mr-4 text-gray-500 dark:text-white'>Normal Price</label>
+                    <input
+                    type='text'
+                    value={normal}
+                    onChange={(e) => setNormal(e.target.value)}
+                    className='border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white'
+                    />
+                </div>
+                <div className='my-3'>
+                    <label className='text-xl mr-4 text-gray-500 dark:text-white'>Holofoil Price</label>
+                    <input
+                    type='text'
+                    value={holo}
+                    onChange={(e) => setHolo(e.target.value)}
+                    className='border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white'
+                    />
+                </div>
+                <div className='my-3'>
+                    <label className='text-xl mr-4 text-gray-500 dark:text-white'>Reverse Holofoil Price</label>
+                    <input
+                    type='text'
+                    value={reverse}
+                    onChange={(e) => setReverse(e.target.value)}
                     className='border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white'
                     />
                 </div>

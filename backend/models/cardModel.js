@@ -18,7 +18,19 @@ const cardSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        market: {
+        date: {
+            type: String,
+            required: true
+        },
+        normal: {
+            type: String,
+            required: true
+        },
+        holo: {
+            type: String,
+            required: true
+        },
+        reverse: {
             type: String,
             required: true
         },

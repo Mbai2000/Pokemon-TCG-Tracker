@@ -10,7 +10,7 @@ const SingleCard = ({ cards }) => {
       )}
       <img
         onClick={() => setShowModal(true)}
-        className="m-auto hover:shadow-xl cursor-pointer"
+        className="m-auto hover:shadow-xl dark:hover:shadow-gray-600 cursor-pointer"
         src={cards.image}
       ></img>
     </div>
