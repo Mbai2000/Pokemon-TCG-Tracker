@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { useSnackbar } from "notistack";
+import { TbPokeball } from "react-icons/tb";
 
 const options = [
   {
@@ -347,16 +348,15 @@ const options = [
   },
 ];
 
-
 const AddCard = () => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
-  const [set, setSet] = useState('');
-  const [image, setImage] = useState('');
-  const [date, setDate] = useState('');
-  const [normal, setNormal] = useState('');
-  const [holo, setHolo] = useState('');
-  const [reverse, setReverse] = useState('');
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [set, setSet] = useState("");
+  const [image, setImage] = useState("");
+  const [date, setDate] = useState("");
+  const [normal, setNormal] = useState("");
+  const [holo, setHolo] = useState("");
+  const [reverse, setReverse] = useState("");
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
@@ -375,7 +375,7 @@ const AddCard = () => {
       .post("http://localhost:8888/cards", data)
       .then((response) => {
         enqueueSnackbar("Card Added", { variant: "success" });
-        navigate('/');
+        navigate("/");
         console.log(response);
       })
       .catch((error) => {
@@ -390,12 +390,12 @@ const AddCard = () => {
   return (
     <div className="flex p-4 mx-auto">
       <div className="justify-center items-center">
-        <h1 className="text-3xl my-4 text-black dark:text-white">
-          Add Card
-          </h1>
-        <div className="flex flex-col border-2 border-sky-400 rounded-x1 w-[600px] p-4 mx-auto">
+        <h1 className="text-3xl my-4 text-black dark:text-white">Add Card</h1>
+        <div className="flex flex-col border-2 border-red-400 rounded-x1 w-[600px] p-4 mx-auto">
           <div className="my-1">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Name</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">
+              Name
+            </label>
             <input
               type="text"
               value={name}
@@ -404,7 +404,9 @@ const AddCard = () => {
             />
           </div>
           <div className="my-3">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Number</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">
+              Number
+            </label>
             <input
               type="text"
               value={number}
@@ -413,7 +415,9 @@ const AddCard = () => {
             />
           </div>
           <div className="my-3">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Set</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">
+              Set
+            </label>
             <Select
               options={options}
               onChange={handleChangeSet}
@@ -422,7 +426,9 @@ const AddCard = () => {
             ></Select>
           </div>
           <div className="my-3">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Image (URL)</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">
+              Image (URL)
+            </label>
             <input
               type="text"
               value={image}
@@ -431,7 +437,9 @@ const AddCard = () => {
             />
           </div>
           <div className="my-3">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Price Date</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">
+              Price Date
+            </label>
             <input
               type="text"
               value={date}
@@ -440,7 +448,9 @@ const AddCard = () => {
             />
           </div>
           <div className="my-3">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Normal Price</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">
+              Normal Price
+            </label>
             <input
               type="text"
               value={normal}
@@ -449,7 +459,9 @@ const AddCard = () => {
             />
           </div>
           <div className="my-3">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Holofoil Price</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">
+              Holofoil Price
+            </label>
             <input
               type="text"
               value={holo}
@@ -458,7 +470,9 @@ const AddCard = () => {
             />
           </div>
           <div className="my-3">
-            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">Reverse Holofoil Price</label>
+            <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">
+              Reverse Holofoil Price
+            </label>
             <input
               type="text"
               value={reverse}
@@ -466,9 +480,12 @@ const AddCard = () => {
               className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
             />
           </div>
-          <button className="p-2 bg-sky-300 m-3" onClick={handleSaveCard}>
-            Add
-          </button>
+          <div className="flex justify-center items-center">
+            <TbPokeball
+              onClick={handleSaveCard}
+              className="text-6xl text-red-600 hover:text-black dark:hover:text-white cursor-pointer"
+            />
+          </div>
         </div>
       </div>
     </div>

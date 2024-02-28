@@ -14,7 +14,7 @@ const SidebarNav = () => {
           <div className="flex gap-x-4 items-center hover:bg-red-400 rounded-md">
             <img
               src="../src/assets/Pokeball.png"
-              className="h-10 w-10 cursor-pointer duration-500"
+              className="h-10 w-10 cursor-pointer"
             ></img>
             <h1
               className={"text-wrap text-white origin-left font-medium text-xl"}

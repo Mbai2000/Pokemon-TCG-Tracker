@@ -46,19 +46,19 @@ const SearchBar = () => {
     setSet(item.set.name);
     setDate(item.tcgplayer.updatedAt);
     if (item.tcgplayer.prices.normal) {
-      setNormal("Normal: $" + item.tcgplayer.prices.normal.market.toFixed(2))
+      setNormal(item.tcgplayer.prices.normal.market.toFixed(2))
     } else {
-      setNormal("Normal: N/A");
+      setNormal("N/A");
     }
     if (item.tcgplayer.prices.holofoil) {
-      setHolo("Holofoil: $" +item.tcgplayer.prices.holofoil.market.toFixed(2))
+      setHolo(item.tcgplayer.prices.holofoil.market.toFixed(2))
     } else {
-      setHolo("Holofoil: N/A");
+      setHolo("N/A");
     }
     if (item.tcgplayer.prices.reverseHolofoil) {
-      setReverse("Reverse Holofoil: $" + item.tcgplayer.prices.reverseHolofoil.market.toFixed(2))
+      setReverse(item.tcgplayer.prices.reverseHolofoil.market.toFixed(2))
     } else {
-      setReverse("Reverse Holofoil: N/A");
+      setReverse("N/A");
     }
     setShowModal(true);
   }

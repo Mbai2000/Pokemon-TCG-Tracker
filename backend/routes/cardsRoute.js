@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', async (request,response) => {
     try {
-        const cards = await Card.find({});
+        const cards = await Card.find({}).sort({name:1});
         
         return response.status(200).json({
             count: cards.length,
