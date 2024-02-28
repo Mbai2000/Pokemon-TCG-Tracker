@@ -13,8 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^8.0.4",
-    "pokemontcgsdk": "^2.0.0"
+    "mongoose": "^8.0.4"
   },
   "devDependencies": {
     "dotenv": "^16.3.1"
