@@ -7,6 +7,7 @@ import EditCard from "./pages/EditCard";
 import SearchCard from "./pages/SearchCard";
 import SidebarNav from "./components/SidebarNav";
 import ToggleButton from "./components/Home/ToggleButton";
+import Collection from "./pages/Collection";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/cards/edit/:id" element={<EditCard />} />
         <Route path="/cards/delete/:id" element={<DeleteCard />} />
         <Route path="/cards/search" element={<SearchCard />} />
+        <Route path="/cards/collection" element={<Collection />} />
       </Routes>
     </div>
     </div>

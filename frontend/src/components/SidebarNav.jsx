@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 
 
 const SidebarNav = () => {
-  const Menus = [
-    { name: "Search", src: "Search", link: "/cards/search" },
-    { name: "Manual Add", src: "Add", gap: true, link: "/cards/add" },
-  ];
   return (
     <div className="flex">
       <div className={"w-64  h-screen bg-red-700 p-5 pt-8"}>
@@ -25,26 +21,51 @@ const SidebarNav = () => {
         </Link>
 
         <ul className="pt-6">
-          {Menus.map((menu, index) => (
-            <Link key={index} to={`${menu.link}`}>
+            <Link to={"/cards/search"}>
               <li
-                key={index}
-                className={`text-gray-300 text-xl flex items-center gap-x-4 cursor-pointer p-2 hover:bg-red-400 rounded-md ${
-                  menu.gap ? "mt-20" : "mt-2"
-                }`}
+                className={'text-gray-300 text-xl flex items-center gap-x-4 cursor-pointer p-2 hover:bg-red-400 rounded-md'}
               >
                 <img
                   className="h-6 w-6"
-                  src={`../src/assets/${menu.src}.png`}
+                  src={'../src/assets/Search.png'}
                 />
                 <span
-                  className={`${!open && "hidden"} origin-left duration-200`}
+                  className='origin-left'
                 >
-                  {menu.name}
+                  Search
                 </span>
               </li>
             </Link>
-          ))}
+            <Link to={"/cards/collection"}>
+              <li
+                className={'text-gray-300 text-xl flex items-center gap-x-4 my-4 cursor-pointer p-2 hover:bg-red-400 rounded-md'}
+              >
+                <img
+                  className="h-8 w-6"
+                  src={'../src/assets/Cardback.png'}
+                />
+                <span
+                  className='origin-left'
+                >
+                  Collection
+                </span>
+              </li>
+            </Link>
+            <Link to={"/cards/add"}>
+              <li
+                className={'text-gray-300 text-xl flex items-center gap-x-4 cursor-pointer p-2 hover:bg-red-400 rounded-md'}
+              >
+                <img
+                  className="h-6 w-6"
+                  src={'../src/assets/Add.png'}
+                />
+                <span
+                  className='origin-left'
+                >
+                  Add
+                </span>
+              </li>
+            </Link>
         </ul>
       </div>
     </div>
