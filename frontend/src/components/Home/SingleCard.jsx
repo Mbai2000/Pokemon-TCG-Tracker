@@ -18,6 +18,3 @@ const SingleCard = ({ cards }) => {
 };
 
 export default SingleCard;
-
-
-

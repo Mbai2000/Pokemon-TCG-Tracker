@@ -25,11 +25,15 @@ const CardModal = ({ card, onClose }) => {
         <img className="object-contain h-[340px]" src={card.image}></img>
         <div className="flex justify-start items-center gap-x-2 pt-3">
           <TbPokeball className="text-red-500 text-2xl" />
-          <h2 className="my-1 dark:text-white">{card.name} - {card.set} - {card.number}</h2>
+          <h2 className="my-1 dark:text-white">
+            {card.name} - {card.set} - {card.number}
+          </h2>
         </div>
         <div className="flex justify-start items-center gap-x-2 pt-6">
           <CiDollar className="text-green-500 text-2xl" />
-          <h2 className="my-1 dark:text-white">TCGplayer price from: {card.date} (USD)</h2>
+          <h2 className="my-1 dark:text-white">
+            TCGplayer price from: {card.date} (USD)
+          </h2>
         </div>
         <div className="flex justify-start items-center gap-x-2">
           <IoIosStarOutline className="text-yellow-500 text-2xl" />
