@@ -59,102 +59,104 @@ const EditCard = () => {
   };
 
   return (
-    <div className="p-4 mx-auto">
-      <h1 className="text-3xl my-4 dark:text-white">Edit Card</h1>
-      <div className="flex flex-col border-2 border-red-400 rounded-x1 w-[600px] p-4 mx-auto">
-        <div className="my-1">
-          <label className="text-xl mr-4 text-gray-500 dark:text-white">
-            Name
-          </label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
-          />
-        </div>
-        <div className="my-3">
-          <label className="text-xl mr-4 text-gray-500 dark:text-white">
-            Number
-          </label>
-          <input
-            type="text"
-            value={number}
-            onChange={(e) => setNumber(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
-          />
-        </div>
-        <div className="my-3">
-          <label className="text-xl mr-4 text-gray-500 dark:text-white">
-            set
-          </label>
-          <input
-            type="text"
-            value={set}
-            onChange={(e) => setSet(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
-          />
-        </div>
-        <div className="my-3">
-          <label className="text-xl mr-4 text-gray-500 dark:text-white">
-            Image
-          </label>
-          <input
-            type="text"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
-          />
-        </div>
-        <div className="my-3">
-          <label className="text-xl mr-4 text-gray-500 dark:text-white">
-            Price Date
-          </label>
-          <input
-            type="text"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
-          />
-        </div>
-        <div className="my-3">
-          <label className="text-xl mr-4 text-gray-500 dark:text-white">
-            Normal Price
-          </label>
-          <input
-            type="text"
-            value={normal}
-            onChange={(e) => setNormal(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
-          />
-        </div>
-        <div className="my-3">
-          <label className="text-xl mr-4 text-gray-500 dark:text-white">
-            Holofoil Price
-          </label>
-          <input
-            type="text"
-            value={holo}
-            onChange={(e) => setHolo(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
-          />
-        </div>
-        <div className="my-3">
-          <label className="text-xl mr-4 text-gray-500 dark:text-white">
-            Reverse Holofoil Price
-          </label>
-          <input
-            type="text"
-            value={reverse}
-            onChange={(e) => setReverse(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
-          />
-        </div>
-        <div className="flex justify-center items-center">
-          <TbPokeball
-            onClick={handleEditCard}
-            className="text-6xl text-red-600 hover:text-black dark:hover:text-white cursor-pointer"
-          />
+    <div className="w-screen h-screen bg-neutral-200 dark:bg-slate-800">
+      <div className="p-4 mx-auto">
+        <div className="flex flex-col border-2 border-red-400 rounded-x1 w-[600px] p-4 mx-auto">
+          <h1 className="text-3xl my-4 dark:text-white">Edit Card</h1>
+          <div className="my-1">
+            <label className="text-xl mr-4 text-gray-500 dark:text-white">
+              Name
+            </label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
+            />
+          </div>
+          <div className="my-3">
+            <label className="text-xl mr-4 text-gray-500 dark:text-white">
+              Number
+            </label>
+            <input
+              type="text"
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
+            />
+          </div>
+          <div className="my-3">
+            <label className="text-xl mr-4 text-gray-500 dark:text-white">
+              set
+            </label>
+            <input
+              type="text"
+              value={set}
+              onChange={(e) => setSet(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
+            />
+          </div>
+          <div className="my-3">
+            <label className="text-xl mr-4 text-gray-500 dark:text-white">
+              Image
+            </label>
+            <input
+              type="text"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
+            />
+          </div>
+          <div className="my-3">
+            <label className="text-xl mr-4 text-gray-500 dark:text-white">
+              Price Date
+            </label>
+            <input
+              type="text"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
+            />
+          </div>
+          <div className="my-3">
+            <label className="text-xl mr-4 text-gray-500 dark:text-white">
+              Normal Price
+            </label>
+            <input
+              type="text"
+              value={normal}
+              onChange={(e) => setNormal(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
+            />
+          </div>
+          <div className="my-3">
+            <label className="text-xl mr-4 text-gray-500 dark:text-white">
+              Holofoil Price
+            </label>
+            <input
+              type="text"
+              value={holo}
+              onChange={(e) => setHolo(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
+            />
+          </div>
+          <div className="my-3">
+            <label className="text-xl mr-4 text-gray-500 dark:text-white">
+              Reverse Holofoil Price
+            </label>
+            <input
+              type="text"
+              value={reverse}
+              onChange={(e) => setReverse(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
+            />
+          </div>
+          <div className="flex justify-center items-center">
+            <TbPokeball
+              onClick={handleEditCard}
+              className="text-6xl text-red-600 hover:text-black dark:hover:text-white cursor-pointer"
+            />
+          </div>
         </div>
       </div>
     </div>

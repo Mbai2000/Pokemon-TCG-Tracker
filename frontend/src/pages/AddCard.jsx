@@ -388,10 +388,10 @@ const AddCard = () => {
   };
 
   return (
-    <div className="flex p-4 mx-auto">
-      <div className="justify-center items-center">
-        <h1 className="text-3xl my-4 text-black dark:text-white">Add Card</h1>
+    <div className="w-screen h-screen bg-neutral-200 dark:bg-slate-800">
+      <div className="flex p-4 mx-auto">
         <div className="flex flex-col border-2 border-red-400 rounded-x1 w-[600px] p-4 mx-auto">
+          <h1 className="text-3xl my-4 text-black dark:text-white">Add Card</h1>
           <div className="my-1">
             <label className="text-xl mr-4 text-gray-500 text-black dark:text-white">
               Name
@@ -400,7 +400,7 @@ const AddCard = () => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
             />
           </div>
           <div className="my-3">
@@ -411,7 +411,7 @@ const AddCard = () => {
               type="text"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
             />
           </div>
           <div className="my-3">
@@ -421,7 +421,7 @@ const AddCard = () => {
             <Select
               options={options}
               onChange={handleChangeSet}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700"
               isSearchable={true}
             ></Select>
           </div>
@@ -433,7 +433,7 @@ const AddCard = () => {
               type="text"
               value={image}
               onChange={(e) => setImage(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
             />
           </div>
           <div className="my-3">
@@ -444,7 +444,7 @@ const AddCard = () => {
               type="text"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
             />
           </div>
           <div className="my-3">
@@ -455,7 +455,7 @@ const AddCard = () => {
               type="text"
               value={normal}
               onChange={(e) => setNormal(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
             />
           </div>
           <div className="my-3">
@@ -466,7 +466,7 @@ const AddCard = () => {
               type="text"
               value={holo}
               onChange={(e) => setHolo(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
             />
           </div>
           <div className="my-3">
@@ -477,7 +477,7 @@ const AddCard = () => {
               type="text"
               value={reverse}
               onChange={(e) => setReverse(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-800 dark:text-white"
+              className="border-2 border-gray-500 px-4 py-1 w-full dark:bg-slate-700 dark:text-white"
             />
           </div>
           <div className="flex justify-center items-center">

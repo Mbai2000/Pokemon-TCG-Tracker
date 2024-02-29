@@ -62,7 +62,7 @@ const SidebarNav = () => {
                 <span
                   className='origin-left'
                 >
-                  Add
+                  Manual Add
                 </span>
               </li>
             </Link>

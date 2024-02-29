@@ -54,7 +54,7 @@ const SearchModal = ({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="overflow-y-auto w-[600px] max-w-full h-[400px] bg-white rounded-xl p-4 flex flex-col relative dark:bg-gray-900"
+        className="overflow-y-auto w-[600px] max-w-full h-[400px] bg-white rounded-xl p-4 flex flex-col relative dark:bg-gray-900 bg-neutral-200"
       >
         <AiOutlineClose
           className="absolute right-6 top-6 text-3xl text-black dark:text-white cursor-pointer"

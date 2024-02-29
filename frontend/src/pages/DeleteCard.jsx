@@ -26,19 +26,20 @@ const DeleteCard = () => {
       });
   };
   return (
-    <div className="p-4 mx-auto">
-      <h1 className="text-3xl my-4 dark:text-white">Delete Card</h1>
-      {loading ? <Spinner /> : ""}
-      <div className="flex flex-col items-center border-2 border-red-400 rounded-xl w-[600px] p-8 mx-auto">
-        <h3 className="text-2xl dark:text-white">
-          Are You Sure You Would Like to Delete this Card?
-        </h3>
-        <button
-          className="p-4 bg-red-600 text-white m-8 w-full"
-          onClick={handleDeleteCard}
-        >
-          Yes, Delete This Card
-        </button>
+    <div className="w-screen h-screen bg-neutral-200 dark:bg-slate-800">
+      <div className="p-6 mx-auto">
+        {loading ? <Spinner /> : ""}
+        <div className="flex flex-col items-center border-2 border-red-400 rounded-xl w-[600px] p-8 mx-auto">
+          <h3 className="text-2xl dark:text-white">
+            Are you sure you would like to DELETE this card?
+          </h3>
+          <button
+            className="p-4 bg-red-600 text-white m-8 w-full"
+            onClick={handleDeleteCard}
+          >
+            Yes, DELETE this card
+          </button>
+        </div>
       </div>
     </div>
   );
