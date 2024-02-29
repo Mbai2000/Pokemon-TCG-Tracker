@@ -23,7 +23,7 @@ const CardModal = ({ card, onClose }) => {
           onClick={onClose}
         />
         <img className="object-contain h-[340px]" src={card.image}></img>
-        <div className="flex justify-start items-center gap-x-2 pt-4">
+        <div className="flex justify-start items-center gap-x-2 pt-3">
           <TbPokeball className="text-red-500 text-2xl" />
           <h2 className="my-1 dark:text-white">{card.name} - {card.set} - {card.number}</h2>
         </div>
@@ -32,15 +32,15 @@ const CardModal = ({ card, onClose }) => {
           <h2 className="my-1 dark:text-white">TCGplayer price from: {card.date} (USD)</h2>
         </div>
         <div className="flex justify-start items-center gap-x-2">
-          <IoIosStarOutline className="text-yellow-300 text-2xl" />
+          <IoIosStarOutline className="text-yellow-500 text-2xl" />
           <h2 className="my-1 dark:text-white">Normal: {card.normal}</h2>
         </div>
         <div className="flex justify-start items-center gap-x-2">
-          <IoMdStar className="text-yellow-300 text-2xl" />
+          <IoMdStar className="text-yellow-500 text-2xl" />
           <h2 className="my-1 dark:text-white">Holofoil: {card.holo}</h2>
         </div>
         <div className="flex justify-start items-center gap-x-2">
-          <IoMdStarHalf className="text-yellow-300 text-2xl" />
+          <IoMdStarHalf className="text-yellow-500 text-2xl" />
           <h2 className="my-1 dark:text-white">
             Reverse Holofoil: {card.reverse}
           </h2>

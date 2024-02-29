@@ -3,6 +3,9 @@ import { CiDollar } from "react-icons/ci";
 import { TbPokeball } from "react-icons/tb";
 import axios from "axios";
 import { useSnackbar } from "notistack";
+import { IoIosStarOutline } from "react-icons/io";
+import { IoMdStar } from "react-icons/io";
+import { IoMdStarHalf } from "react-icons/io";
 
 const SearchModal = ({
   onClose,
@@ -61,7 +64,7 @@ const SearchModal = ({
           onClick={onClose}
         />
         <img className="object-contain h-[345px]" src={cardImage}></img>
-        <div className="flex justify-start items-center gap-x-2 pt-4">
+        <div className="flex justify-start items-center gap-x-2 pt-3">
           <TbPokeball className="text-red-500 text-2xl left-2" />
           <h2 className="my-1 dark:text-white">{cardName} - {cardSet} - {cardNumber}</h2>
         </div>
@@ -70,15 +73,15 @@ const SearchModal = ({
           <h2 className="my-1 dark:text-white">TCGprice from: {cardDate}</h2>
         </div>
         <div className="flex justify-start items-center gap-x-2">
-          <CiDollar className="text-green-500 text-2xl" />
+        <IoIosStarOutline className="text-yellow-500 text-2xl" />
           <h2 className="my-1 dark:text-white">Normal: {cardNormal}</h2>
         </div>
         <div className="flex justify-start items-center gap-x-2">
-          <CiDollar className="text-green-500 text-2xl" />
+        <IoMdStar className="text-yellow-500 text-2xl" />
           <h2 className="my-1 dark:text-white">Holofoil: {cardHolo}</h2>
         </div>
         <div className="flex justify-start items-center gap-x-2">
-          <CiDollar className="text-green-500 text-2xl" />
+        <IoMdStarHalf className="text-yellow-500 text-2xl" />
           <h2 className="my-1 dark:text-white">
             Reverse Holofoil: {cardReverse}
           </h2>
