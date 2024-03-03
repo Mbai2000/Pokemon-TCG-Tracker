@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/TCGlogo.png";
 
 const Home = () => {
   const info = `
@@ -17,7 +18,7 @@ const Home = () => {
   `;
   return (
     <div className="overflow-hidden flex w-full max-h-screen justify-center bg-neutral-200 dark:bg-slate-800">
-      <img className="h-40 mt-20" src="../src/assets/TCGlogo.png"></img>
+      <img className="h-40 mt-20" src={logo}></img>
       <div className="absolute top-[17rem] h-[30rem] w-[50rem] bg-white rounded border-1 dark:bg-slate-700">
         <h1 className="p-4 text-4xl text-center dark:text-white">
           Pokémon TCG Tracker

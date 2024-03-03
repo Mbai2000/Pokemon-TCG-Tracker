@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import pokeball from "../assets/Pokeball.png";
+import search from "../assets/Search.png";
+import add from "../assets/Add.png";
+import cardback from "../assets/Cardback.png";
 
 const SidebarNav = () => {
   return (
@@ -8,7 +12,7 @@ const SidebarNav = () => {
         <Link to="/">
           <div className="flex gap-x-4 items-center hover:bg-red-400 rounded-md">
             <img
-              src="../src/assets/Pokeball.png"
+              src= {pokeball}
               className="h-10 w-10 cursor-pointer"
             ></img>
             <h1
@@ -26,7 +30,7 @@ const SidebarNav = () => {
                 "text-gray-300 text-xl flex items-center gap-x-4 cursor-pointer p-2 hover:bg-red-400 rounded-md"
               }
             >
-              <img className="h-6 w-6" src={"../src/assets/Search.png"} />
+              <img className="h-6 w-6" src={search} />
               <span className="origin-left">Search</span>
             </li>
           </Link>
@@ -36,7 +40,7 @@ const SidebarNav = () => {
                 "text-gray-300 text-xl flex items-center gap-x-4 my-4 cursor-pointer p-2 hover:bg-red-400 rounded-md"
               }
             >
-              <img className="h-8 w-6" src={"../src/assets/Cardback.png"} />
+              <img className="h-8 w-6" src={cardback} />
               <span className="origin-left">Collection</span>
             </li>
           </Link>
@@ -46,7 +50,7 @@ const SidebarNav = () => {
                 "text-gray-300 text-xl flex items-center gap-x-4 cursor-pointer p-2 hover:bg-red-400 rounded-md"
               }
             >
-              <img className="h-6 w-6" src={"../src/assets/Add.png"} />
+              <img className="h-6 w-6" src={add} />
               <span className="origin-left">Manual Add</span>
             </li>
           </Link>
