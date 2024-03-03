@@ -42,7 +42,7 @@ For full functionality, you will need a [MongoDB](https://www.mongodb.com/) data
 
 Installation:
 
-`npm install`  
+Run `npm install` in the backend and frontend directories.
 
 MongoDB connection:
 
@@ -50,11 +50,20 @@ Create a .env file within the backend directory. Store the database URL as shown
 
 To Start Server:
 
-`npm start`  
+Run `npm start` in the backend directory.
 
 To Visit App:
 
-`localhost:5173/`  
+Run `npm run dev` in the frontend directory and visit `localhost:5173/`  
+
+Alternatively:
+
+Run `npm run build` 
+
+Then `npm run preview`
+
+Visit `localhost:4173`
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
