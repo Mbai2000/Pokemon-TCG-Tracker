@@ -24,7 +24,7 @@ const Collection = () => {
   const handleSearch = () => {
     setQuery(query.charAt(0).toUpperCase() + query.slice(1));
     let found = cards.filter((card) => {
-      return card.name.startsWith(query);
+      return card.name.includes(query);
     });
     setSearch(true);
     setSearched(found);

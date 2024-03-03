@@ -375,7 +375,7 @@ const AddCard = () => {
       .post("http://localhost:8888/cards", data)
       .then((response) => {
         enqueueSnackbar("Card Added", { variant: "success" });
-        navigate("/");
+        navigate("/cards/collection");
         console.log(response);
       })
       .catch((error) => {

@@ -50,7 +50,7 @@ const EditCard = () => {
       .put(`http://localhost:8888/cards/${id}`, data)
       .then(() => {
         enqueueSnackbar("Card Changed", { variant: "success" });
-        navigate("/");
+        navigate("/cards/collection");
       })
       .catch((error) => {
         enqueueSnackbar("Card Change Error", { variant: "error" });

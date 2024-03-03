@@ -17,7 +17,7 @@ const DeleteCard = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Card Deleted", { variant: "success" });
-        navigate("/");
+        navigate("/cards/collection");
       })
       .catch((error) => {
         setLoading(false);
